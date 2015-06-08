@@ -39,9 +39,19 @@ angular.module('starter.controllers', [])
             $scope.closeLogin();
         }, 1000);
     };
+
+    $scope.menu = [{
+        name: 'Add Delivery',
+        link: 'app.browse'
+    }, {
+        name: 'Delivery List',
+        link: 'app.search'
+    }, {
+        name: 'Pick Up List'
+    }];
 })
 
-.controller('PlaylistsCtrl', function($scope, $timeout) {
+.controller('PlaylistsCtrl', function($scope, $timeout, $state) {
     $scope.playlists = [{
         title: 'Reggae',
         id: 1
@@ -61,6 +71,10 @@ angular.module('starter.controllers', [])
         title: 'Cowbell',
         id: 6
     }];
+    $scope.goToMenuItem=function(link, event) {
+        $state.go(link);
+    };
+    
     $scope.$on('mapInitialized', function(event, map) {
         $scope.map = map;
     });
