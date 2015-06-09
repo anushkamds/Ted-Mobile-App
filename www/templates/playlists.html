@@ -1,45 +1,43 @@
 <ion-view view-title="Playlists">
     <ion-content>
         <md-content layout-padding>
-            <form name="projectForm">
+            <form name="userForm">
+                <div layout layout-sm="column">
+                    <md-input-container flex>
+                        <label>First name</label>
+                        <input ng-model="user.firstName">
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label>Last Name</label>
+                        <input ng-model="theMax">
+                    </md-input-container>
+                </div>
                 <md-input-container>
-                    <label>Client Name</label>
-                    <input md-maxlength="30" required name="description" ng-model="project.description">
-                    <div ng-messages="projectForm.description.$error">
-                        <div ng-message="md-maxlength">The name has to be less than 30 characters long.</div>
-                    </div>
+                    <label>Contact Number</label>
+                    <input ng-model="user.company">
                 </md-input-container>
-                <md-input-container>
-                    <label>Client Phone Number</label>
-                    <input required name="clientName" ng-model="project.clientName" type="number">
-                    <div ng-messages="projectForm.clientName.$error">
-                        <div ng-message="required">This is required.</div>
-                    </div>
-                </md-input-container>
-                <md-input-container>
+                <md-input-container flex>
                     <label>From</label>
-                    <input required name="clientName" ng-model="project.clientName" type="text">
-                    <div ng-messages="projectForm.clientName.$error">
-                        <div ng-message="required">This is required.</div>
-                    </div>
+                    <input ng-model="user.address">
                 </md-input-container>
                 <md-input-container>
                     <label>To</label>
-                    <input required name="clientName" ng-model="project.clientName" type="text">
-                    <div ng-messages="projectForm.clientName.$error">
-                        <div ng-message="required">This is required.</div>
-                    </div>
+                    <input ng-model="user.address2">
                 </md-input-container>
-
-                <md-input-container>
-                    <label>Hourly Rate (USD)</label>
-                    <input required type="number" step="any" name="rate" ng-model="project.rate" min="800" max="4999">
-                    <div ng-messages="projectForm.rate.$error">
-                        <div ng-message="required">You've got to charge something! You can't just <b>give away</b> a Missile Defense System.</div>
-                        <div ng-message="min">You should charge at least $800 an hour. This job is a big deal... if you mess up, everyone dies!</div>
-                        <div ng-message="max">$5,000 an hour? That's a little ridiculous. I doubt event Bill Clinton could afford that.</div>
-                    </div>
-                </md-input-container>
+                <div layout layout-sm="column">
+                    <md-input-container flex>
+                        <label>City</label>
+                        <input ng-model="user.city">
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label>State</label>
+                        <input ng-model="user.state">
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label>Postal Code</label>
+                        <input ng-model="user.postalCode">
+                    </md-input-container>
+                </div>
             </form>
         </md-content>
         <p>

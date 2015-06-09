@@ -7,16 +7,19 @@
 angular.module('starter', ['ionic', 'starter.controllers', 'ngMap', 'ngMaterial','ngMessages'])
 
 .run(function($ionicPlatform) {
-    $ionicPlatform.ready(function() {
+    $ionicPlatform.ready(function($cordovaStatusbar) {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
         // for form inputs)
+        $cordovaStatusbar.overlaysWebView(true);
+        $cordovaStatusbar.styleHex('#fff');
+        $cordovaStatusbar.hide();
         if (window.cordova && window.cordova.plugins.Keyboard) {
             cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
         }
-        if (window.StatusBar) {
-            // org.apache.cordova.statusbar required
-            StatusBar.styleDefault();
-        }
+        // if (window.StatusBar) {
+        //     // org.apache.cordova.statusbar required
+        //     StatusBar.styleDefault();
+        // }
     });
 })
 

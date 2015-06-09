@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $state, $ionicSideMenuDelegate) {
 
     // With the new view caching in Ionic, Controllers are only called
     // when they are recreated or on app start, instead of every page change.
@@ -42,16 +42,22 @@ angular.module('starter.controllers', [])
 
     $scope.menu = [{
         name: 'Add Delivery',
-        link: 'app.browse'
+        link: 'app.playlists'
     }, {
         name: 'Delivery List',
         link: 'app.search'
     }, {
-        name: 'Pick Up List'
+        name: 'Pick Up List',
+        link: 'app.browse'
+
     }];
+    $scope.goToMenuItem = function(link, event) {
+        $ionicSideMenuDelegate.toggleLeft();
+        $state.go(link);
+    };
 })
 
-.controller('PlaylistsCtrl', function($scope, $timeout, $state) {
+.controller('PlaylistsCtrl', function($scope, $timeout) {
     $scope.playlists = [{
         title: 'Reggae',
         id: 1
@@ -71,10 +77,7 @@ angular.module('starter.controllers', [])
         title: 'Cowbell',
         id: 6
     }];
-    $scope.goToMenuItem=function(link, event) {
-        $state.go(link);
-    };
-    
+
     $scope.$on('mapInitialized', function(event, map) {
         $scope.map = map;
     });
