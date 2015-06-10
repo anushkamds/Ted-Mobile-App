@@ -3,8 +3,8 @@
   "app_id": "",
   "proxies": [
     {
-      "path": "/tadapp",
-      "proxyUrl": "http://192.168.123.111/tadapp"
+      "path": "/tadhack",
+      "proxyUrl": "http://192.168.123.168/tadhack"
     }
    ]
 }

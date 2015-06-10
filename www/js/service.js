@@ -4,9 +4,14 @@ angular.module('starter.services', [])
 
 .factory("Courier", function($http, $ionicLoading, host) {
     var addDeliveryURL = host + "tadhack/api/index.php";
+    var candidateUpdateRequest = {
+        method: 'GET',
+        url: addDeliveryURL,
+        headers: {}
+    };
     return {
         linktest: function() {
-            return $http(addDeliveryURL).then(function(response) {
+            return $http(candidateUpdateRequest).then(function(response) {
                 alert(response);
             }).catch(function(response) {
                 alert("error" + response);
