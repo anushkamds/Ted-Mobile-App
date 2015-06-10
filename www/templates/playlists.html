@@ -24,24 +24,12 @@
                     <label>To</label>
                     <input ng-model="user.address2">
                 </md-input-container>
-                <div layout layout-sm="column">
-                    <md-input-container flex>
-                        <label>City</label>
-                        <input ng-model="user.city">
-                    </md-input-container>
-                    <md-input-container flex>
-                        <label>State</label>
-                        <input ng-model="user.state">
-                    </md-input-container>
-                    <md-input-container flex>
-                        <label>Postal Code</label>
-                        <input ng-model="user.postalCode">
-                    </md-input-container>
-                </div>
             </form>
+            <md-button class="md-raised md-primary" on-tap="buttonClick()">Primary</md-button>
         </md-content>
-        <p>
+
+        <!-- <p>
             {{lat}} {{long}}
-        </p>
+        </p> -->
     </ion-content>
 </ion-view>

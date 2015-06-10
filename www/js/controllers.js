@@ -49,7 +49,6 @@ angular.module('starter.controllers', [])
     }, {
         name: 'Pick Up List',
         link: 'app.browse'
-
     }];
     $scope.goToMenuItem = function(link, event) {
         $ionicSideMenuDelegate.toggleLeft();
@@ -57,7 +56,7 @@ angular.module('starter.controllers', [])
     };
 })
 
-.controller('PlaylistsCtrl', function($scope, $timeout) {
+.controller('PlaylistsCtrl', function($scope, $timeout, Courier) {
     $scope.playlists = [{
         title: 'Reggae',
         id: 1
@@ -91,6 +90,9 @@ angular.module('starter.controllers', [])
             });
             geolocation();
         }, 1000);
+    }
+    $scope.buttonClick=function(){
+        Courier.linktest();
     }
 
 })
