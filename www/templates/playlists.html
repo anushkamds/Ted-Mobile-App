@@ -1,35 +1,48 @@
 <ion-view view-title="Playlists">
     <ion-content>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <md-button class="md-icon-button" aria-label="Settings" menu-toggle="left">
+                    <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+                </md-button>
+                <h2>
+                    <span>Add New Delivery</span>
+                </h2>
+                <span flex></span>
+                <!-- <md-button class="md-icon-button" aria-label="Favorite">
+                    <md-icon md-svg-icon="img/icons/favorite.svg" style="color: greenyellow;"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="More">
+                    <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+                </md-button> -->
+            </div>
+        </md-toolbar>
         <md-content layout-padding>
             <form name="userForm">
                 <div layout layout-sm="column">
                     <md-input-container flex>
                         <label>First name</label>
-                        <input ng-model="user.firstName">
+                        <input ng-model="delivery.firstname">
                     </md-input-container>
                     <md-input-container flex>
                         <label>Last Name</label>
-                        <input ng-model="theMax">
+                        <input ng-model="delivery.lastname">
                     </md-input-container>
                 </div>
                 <md-input-container>
                     <label>Contact Number</label>
-                    <input ng-model="user.company">
+                    <input ng-model="delivery.number">
                 </md-input-container>
                 <md-input-container flex>
                     <label>From</label>
-                    <input ng-model="user.address">
+                    <input ng-model="delivery.from">
                 </md-input-container>
                 <md-input-container>
                     <label>To</label>
-                    <input ng-model="user.address2">
+                    <input ng-model="delivery.to">
                 </md-input-container>
             </form>
-            <md-button class="md-raised md-primary" on-tap="buttonClick()">Primary</md-button>
+            <md-button class="md-raised md-primary" on-tap="submit()">Primary</md-button>
         </md-content>
-
-        <!-- <p>
-            {{lat}} {{long}}
-        </p> -->
     </ion-content>
 </ion-view>

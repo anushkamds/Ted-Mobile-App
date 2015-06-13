@@ -1,5 +1,26 @@
 <ion-view view-title="Search">
-  <ion-content>
-    <h1>Search</h1>
-  </ion-content>
+    <ion-content>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <md-button class="md-icon-button" aria-label="Settings" menu-toggle="left">
+                    <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+                </md-button>
+                <h2>
+                    <span>Delivery List</span>
+                </h2>
+            </div>
+        </md-toolbar>
+        <md-content>
+            <md-list>
+                <md-list-item class="md-3-line" ng-repeat="item in deliverylist" md-ink-ripple="#333">
+                    <div class="md-list-item-text">
+                        <h3>Customer Name : {{ item.customer_name }}</h3>
+                        <h4>Customer Phone no: {{ item.customer_phone_no }}</h4>
+                        <p>From: {{ item.from }} To: {{ item.to }} </p>
+                    </div>
+                    <md-divider></md-divider>
+                </md-list-item>
+            </md-list>
+        </md-content>
+    </ion-content>
 </ion-view>

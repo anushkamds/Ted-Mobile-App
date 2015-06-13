@@ -10,9 +10,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     $ionicPlatform.ready(function($cordovaStatusbar) {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
         // for form inputs)
-        $cordovaStatusbar.overlaysWebView(true);
-        $cordovaStatusbar.styleHex('#fff');
-        $cordovaStatusbar.hide();
         if (window.cordova && window.cordova.plugins.Keyboard) {
             cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
         }
@@ -41,7 +38,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         url: "/search",
         views: {
             'menuContent': {
-                templateUrl: "templates/search.html"
+                templateUrl: "templates/search.html",
+                controller: 'DeliveryListCtrl'
             }
         }
     })
@@ -50,7 +48,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
             url: "/browse",
             views: {
                 'menuContent': {
-                    templateUrl: "templates/browse.html"
+                    templateUrl: "templates/browse.html",
+                    controller: 'PickupListCtrl'
                 }
             }
         })
@@ -59,7 +58,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
             views: {
                 'menuContent': {
                     templateUrl: "templates/playlists.html",
-                    controller: 'PlaylistsCtrl'
+                    controller: 'AddDeliverCtrl'
                 }
             }
         })

@@ -1,29 +1,18 @@
 <ion-side-menus enable-menu-with-back-views="false">
     <ion-side-menu-content>
-        <md-toolbar>
-            <div class="md-toolbar-tools">
-                <md-button class="md-icon-button" aria-label="Settings" menu-toggle="left">
-                    <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
-                </md-button>
-                <h2>
-                    <span>Add New Delivery</span>
-                </h2>
-                <span flex></span>
-                <!-- <md-button class="md-icon-button" aria-label="Favorite">
-                    <md-icon md-svg-icon="img/icons/favorite.svg" style="color: greenyellow;"></md-icon>
-                </md-button>
-                <md-button class="md-icon-button" aria-label="More">
-                    <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
-                </md-button> -->
-            </div>
-        </md-toolbar>
         <ion-nav-view name="menuContent"></ion-nav-view>
     </ion-side-menu-content>
 
     <ion-side-menu side="left">
-        <md-toolbar class="md-theme-indigo">
-            <h1 class="md-toolbar-tools">Sidenav Left</h1>
-        </md-toolbar>
+        <md-toolbar class="md-tall md-hue-2">
+        <span flex></span>
+        <div layout="column" class="md-toolbar-tools-bottom inset">
+          <user-avatar></user-avatar>
+          <span></span>
+          <div>Firstname Lastname</div>
+          <div>email@domainname.com</div>
+        </div>
+      </md-toolbar>
         <md-content layout-padding="">
             <md-list>
                 <md-list-item ng-repeat="menuItem in menu" ng-click="goToMenuItem(menuItem.link, $event)">
@@ -31,5 +20,16 @@
                 </md-list-item>
             </md-list>
         </md-content>
+        <md-item ng-repeat="menuItem in menu">
+        <a>
+          <md-item-content md-ink-ripple layout="row" layout-align="start center">
+            <div class="inset">
+              <ng-md-icon icon="{{item.icon}}"></ng-md-icon>
+            </div>
+            <div class="inset">{{item.title}}
+            </div>
+          </md-item-content>
+        </a>
+      </md-item>
     </ion-side-menu>
 </ion-side-menus>

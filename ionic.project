@@ -4,7 +4,7 @@
   "proxies": [
     {
       "path": "/application",
-      "proxyUrl": "http://52.74.176.169/application"
+          "proxyUrl": "http://52.74.176.169/application"
     }
    ]
 }
